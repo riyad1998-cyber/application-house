@@ -72,7 +72,6 @@ const Navbar = () => {
            <Link
       to ="https://github.com/dashboard" 
       target="_blank"
-      rel="noopener noreferrer"
       className="btn flex items-center gap-2 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-lg"
     >
       <FontAwesomeIcon icon={faGithub} className="text-xl" />
