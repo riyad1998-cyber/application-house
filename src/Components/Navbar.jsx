@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import logoImage from "../assets/logo.png";
 import { Link, NavLink } from 'react-router';
 
@@ -67,7 +69,15 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-end">
-            <a className="btn">Button</a>
+           <Link
+      to ="https://github.com/dashboard" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="btn flex items-center gap-2 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-white rounded-lg"
+    >
+      <FontAwesomeIcon icon={faGithub} className="text-xl" />
+      Contribute
+    </Link>
           </div>
         </div>
       </div>
