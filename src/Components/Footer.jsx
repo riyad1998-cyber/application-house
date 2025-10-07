@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router";
 
 const Footer = () => {
   return (
@@ -33,19 +34,19 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2">
             <li>
-              <a href="/" className="hover:text-white transition-colors block">
+              <Link to="/" className="hover:text-white transition-colors block">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/applications" className="hover:text-white transition-colors block">
+              <Link to="/applications" className="hover:text-white transition-colors block">
                 Apps
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/installation" className="hover:text-white transition-colors block">
+              <Link to="/installation" className="hover:text-white transition-colors block">
                 Installation
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/contact" className="hover:text-white transition-colors block">
@@ -60,7 +61,7 @@ const Footer = () => {
           <p className="text-gray-400 mb-4">
             Get the latest updates right in your inbox.
           </p>
-          <form className="flex flex-col sm:flex-row gap-2">
+          <form className="flex flex-col sm:flex-row sm:flex-wrap gap-2">
             <input
               type="email"
               placeholder="Your email"
@@ -74,6 +75,7 @@ const Footer = () => {
             </button>
           </form>
         </div>
+
       </div>
 
       <div className="mt-12 text-center text-gray-500 text-sm px-4">
