@@ -7,10 +7,11 @@ const ApplicationsCard = ({ app }) => {
   const { companyName, description, downloads, ratingAvg } = app;
 
   return (
-    <div className="card bg-base-100 w-96 shadow-sm p-4">
+    <div className="card bg-base-100 w-96 shadow-sm p-4 transition-transform transform hover:scale-105 hover:shadow-lg rounded-lg mt-[40px]">
       <figure>
-        <img src={image} alt="App" />
+        <img src={image} alt="App" className="rounded-md" />
       </figure>
+
 
       <div className="mt-3 mb-4">
         <h2 className="text-xl font-semibold text-gray-800">{companyName}</h2>
