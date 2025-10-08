@@ -1,12 +1,11 @@
 import React from 'react';
 
-const ApplicationsDetail = () => {
-
+const applicationsDetail = () => {
     return (
         <div>
-            
+            <h1>Detail </h1>
         </div>
     );
 };
 
-export default ApplicationsDetail;
+export default applicationsDetail;

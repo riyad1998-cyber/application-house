@@ -7,7 +7,7 @@ import { Link } from 'react-router';
 const Banner = () => {
     return (
         <div>
-            <div className="max-w-[1700px] mx-auto px-4">
+            <div className="max-w-[1700px] mx-auto px-4 lg:mt-20 sm:mt-10 mt-6">
                 <div className='flex flex-col items-center text-center'>
                     <h1 className='text-4xl sm:text-5xl md:text-[72px] font-bold leading-tight'>
                         We Build <br/>
