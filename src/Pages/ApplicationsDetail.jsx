@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useApplication from '../Hooks/useApplication';
 import downloadIcon from "../assets/icon-downloads.png";
@@ -22,6 +22,12 @@ const ApplicationsDetail = () => {
 
     const [installedState, setInstalledState] = useState(false); 
 
+    useEffect(() => {
+        const installedApps= JSON.parse(localStorage.getItem('installing')) || [];
+        const isInstalled =installedApps.some(app => app.id===Number(id));
+        setInstalledState(isInstalled);
+    }, [id]);
+
     if (loading) return <p>Loading.....</p>;
     if (!application) return  <div className="col-span-full flex flex-col justify-center items-center h-40 h-150">
         <p className="text-gray-500 text-4xl font-bold mb-4">App Is Not Found!!</p>
@@ -38,12 +44,12 @@ const ApplicationsDetail = () => {
         companyName, title, downloads, ratingAvg, image, size, Developer, reviews, ratings, description
     } = application;
 
-    const hadnleInstalled = () => {
-        const existingList = JSON.parse(localStorage.getItem('installing')) || [];
-        const isDuplicate = existingList.some(apk => apk.id === application.id);
-        if (isDuplicate) return alert('Already Added');
+    const hadnleInstalled= ()=> {
+        const existingList=JSON.parse(localStorage.getItem('installing')) || [];
+        const isDuplicate= existingList.some(apk => apk.id === application.id);
+        if (isDuplicate) return;
 
-        const updatedList = [...existingList, application];
+        const updatedList=[...existingList, application];
         localStorage.setItem('installing', JSON.stringify(updatedList));
 
         setInstalledState(true);
@@ -79,7 +85,6 @@ const ApplicationsDetail = () => {
                         </div>
                     </div>
 
-     
                     <div className='flex flex-col sm:flex-row  gap-8 mb-6'>
                         <div className='flex flex-col items-center'>
                             <img src={downloadIcon} alt="Downloads" className='w-8 h-8 sm:w-10 sm:h-9 mb-1' />
